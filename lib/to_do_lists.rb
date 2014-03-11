@@ -1,4 +1,5 @@
 require './lib/to_do'
+require './lib/list_class'
 
 @list = []
 

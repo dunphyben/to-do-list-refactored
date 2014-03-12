@@ -4,7 +4,7 @@ require './lib/list_class'
 
 def main_menu
 
-  puts "Press 'n' to create a new list"
+  puts "\nPress 'n' to create a new list"
   puts "Press 'v' to view all of your to-do lists"
   puts "Press 'ex' to exit"
 
@@ -50,8 +50,8 @@ def view_lists
   # end
 
     List.all.each_with_index do |list, index|
-      puts "#{index + 1}. #{lists}"
-      list.tasks.each_with_index do |task, index|
+      puts "#{index + 1}. #{list}"
+      Task.all.each_with_index do |task, index|
         puts "#{index + 1}. #{task.description}\n"
       end
     end
@@ -98,14 +98,14 @@ def sub_menu
 end
 
 def add_task(list)
-  puts "Enter a description of the new task:"
+  puts "\nEnter a description of the new task:"
   user_description = gets.chomp
   list.add_task(user_description)
   puts "Task added.\n\n"
 
   puts "#{list.list_name}"
   list.tasks.each_with_index do |task, index|
-    puts "#{index+1}: #{task.description}"
+    puts "#{index+1}: #{task.description}\n\n"
   end
 
   puts "What else you got? New task enter 'y' - back to main menu enter 'n'."

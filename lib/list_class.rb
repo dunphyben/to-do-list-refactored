@@ -23,13 +23,22 @@ class List
   def initialize(list_name)
     @list_name = list_name
     @tasks = []
+    @@all_lists << @tasks
   end
 
-  # def tasks
-  #   @tasks
-  # end
+  def list_name
+    @list_name
+  end
 
-  # def add_task(task_to_add)
-  #   @tasks << task_to_add
-  # end
+  def marked_list
+    @marked_list = true
+  end
+
+  def add_task(description)
+    @tasks << Task.create(description)
+  end
+
+  def tasks
+    @tasks
+  end
 end
